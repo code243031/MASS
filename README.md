@@ -1,9 +1,9 @@
 Project MASS
 ===============
 ### 목차
-1. [What is the MASS?](1.-What-is-the-MASS?)  
-2. [Documents](2.-Documents)  
-3. [Developers](3.-Developers)  
+1. [What is the MASS?](#-1.-What-is-the-MASS?)  
+2. [Documents](#-2.-Documents)  
+3. [Developers](#-3.-Developers)  
   
 ## 1. What is the MASS?
 MASS는 Medical Accident Statistics Site의 줄임말로 국내 의료사고 및 이로인한 의료분쟁이 발생했던 기록들을 통하여 국민들이 제공받고 있는 의료산업 및 서비스의 실태를 분석하기 위해 만들어진 웹사이트 입니다.  
@@ -15,7 +15,7 @@ MASS는 Medical Accident Statistics Site의 줄임말로 국내 의료사고 및
 ******************
 ## 2. Documents
 _준비중..._  
-- [라이선스](https://github.com/code243031/MASS/License)  
+- [라이선스](https://github.com/code243031/MASS/LICENSE)  
 
 **************************
 ## 3. Developers
