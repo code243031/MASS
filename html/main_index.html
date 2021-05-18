@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        <title>MASS project</title>
+        <title>MASS project | Home</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta http-equiv="Content-Script-Type" content="text/javascript">
         <meta http-equiv="Content-Style-Type" content="text/css">        
@@ -13,28 +13,28 @@
         <link rel="icon" href="../res/img/favicon.ico" type="image/x-icon">
 
         <link href="../css/layout_main.css" rel="stylesheet">
+        <link href="../css/stntax.css" rel="stylesheet">
     </head>
 
     <body>
-        <!-- 현재 메뉴바가 불안정. 후에 수정할 것-->
         <div id="header">
-            <div id="header-wrapper">
-                <nav id="menubar", class="set-the-links">
-                    <a href="index.html"><img src="../res/img/banner.png" alt="banner", width="150"></a>
-                    <span style="visibility: hidden;">----------------------------------------------------------------------------------------------------------------</span>
-                    <span><a href="index.html">메인 홈</a></span>
-                    <span><a href="sub_page.html">상세분석정보</a></span>
-                    <span><a href="sub_release.html">분석정보 릴리즈</a></span>
-                </nav>
-            </div>
+            <a href="main_index.html"><img src="../res/img/banner.png" alt="banner", width="300" style="margin-top=20px;"></a>
+            <nav id="topMenu">
+                <ul>
+                    <li><a class="menuLink" href="main_index.html">Home</a></li>
+                    <li><a class="menuLink" href="sub_about_us.html">About us</a></li>
+                    <li><a class="menuLink" href="sub_page.html">Ministries</a></li>
+                    <li><a class="menuLink" href="sub_release.html">Release</a></li>
+                    <li><a class="menuLink" href="https://blog.naver.com/koy321" target="_blank">Blog</a></li>
+                </ul>
+            </nav>
         </div>
 
         <div id="wrap">
             <div id="container" class="main-content">
-                <div id="img-slide">
+                <div id="img-slide" class="slide">
                     <div class="slideshow-container">
                         <div class="mySlides fade">
-                            <div class="numbertext">1 / 5</div>
                             <img src="../res/img/main/img_scroll1.png" alt="img1", width="100%">
                             <div class="text">
                                 <h2>Project Mass에 오신걸 환영합니다</h2>
@@ -43,7 +43,6 @@
                         </div>
 
                         <div class="mySlides fade">
-                            <div class="numbertext">2 / 5</div>
                             <img src="../res/img/main/img_scroll2.png" alt="img2", width="100%">
                             <div class="text">
                                 <h2>사이트를 개설한 이유</h2>
@@ -53,7 +52,6 @@
                         </div>
 
                         <div class="mySlides fade">
-                            <div class="numbertext">3 / 5</div>
                             <img src="../res/img/main/img_scroll3.png" alt="img3", width="100%">
                             <div class="text">
                                 <h2>제공되는 서비스</h2>
@@ -62,7 +60,6 @@
                         </div>
 
                         <div class="mySlides fade">
-                            <div class="numbertext">4 / 5</div>
                             <img src="../res/img/main/img_scroll4.png" alt="img4", width="100%">
                             <div class="text">
                                 <h2>발전 방향과 프로젝트 비전</h2>
@@ -72,7 +69,6 @@
                         </div>
 
                         <div class="mySlides fade">
-                            <div class="numbertext">5 / 5</div>
                             <img src="../res/img/main/img_scroll5.png" alt="img5", width="100%">
                             <div class="text">
                                 <h2>프로젝트 참여자 모집</h2>
@@ -81,7 +77,6 @@
                         </div>
                     </div>
                     <br>
-
                     <div style="text-align:center">
                         <span class="dot"></span>
                         <span class="dot"></span>
@@ -89,24 +84,26 @@
                         <span class="dot"></span>
                         <span class="dot"></span>
                     </div>
-                    <hr>
-                    <div id="main-content-text1">
-                        <img src="../res/img/main_prop.png" width="50%">
-                    </div>
-                    <hr>
-                    <div id="main-content-text2">
-                        <h1>참여한 개발자</h1>
-                        <ul>
-                            <li></li>
-                            <li></li>                            
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
+                    <br>
+                </div>
+                <hr>
+                <div id="main-content-text1">
+                    <img src="../res/img/main_prop.png" width="50%">
+                </div>
+                <hr>
+                <div id="main-content-text2">
+                    <h1>참여한 개발자</h1>
+                    <ul>
+                        <li></li>
+                        <li></li>                            
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
                 </div>
             </div>
         </div>
+
         <div id="footer">
             <h3>project MASS</h3>
             <div id="footer-wrapper">
@@ -145,12 +142,11 @@
                     </span>
                 </div>
                 <div id="footer-info-text"style="float: center; width: 45%;">
-                    <p>GitHub   | https://github.com/code243031/MASS</p>
-                    <p>Email    | koy321@naver.com</p>
-                    <p>Phone    | 010-8878-4770</p>
+                    <p>GitHub&nbsp; | https://github.com/code243031/MASS</p>
+                    <p>Email&nbsp;&nbsp;&nbsp;&nbsp;| koy321@naver.com</p>
+                    <p>Phone&nbsp;&nbsp;&nbsp;| 010-8878-4770</p>
                 </div>
             </div>
-          
         </div>
         <script src="../js/img_slide.js"></script>
     </body>
