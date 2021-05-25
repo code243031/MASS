@@ -23,27 +23,78 @@
                 <ul>
                     <li><a class="menuLink" href="main_index.html">Home</a></li>
                     <li><a class="menuLink" href="sub_about_us.html">About us</a></li>
-                    <li><a class="menuLink" href="sub_page.html">Ministries</a></li>
+                    <li><a class="menuLink" href="sub_page.html">Analysis information</a></li>
                     <li><a class="menuLink" href="sub_release.html">Release</a></li>
                     <li><a class="menuLink" href="https://blog.naver.com/koy321" target="_blank">Blog</a></li>
                 </ul>
             </nav>
         </div>
 
-        <h1 style="margin: 25px;">상세 분석정보 조회</h1>
         <div id="content-wrap" wfd-id="0">
+            <h1 style="margin: 25px;">상세 분석정보 조회</h1>
             <div id="sidebar" wfd-id="298">
+                <h3>조회정보 입력</h3>
+                <label for="customize.sort" class="form-text">정렬기준</label>
+                <select class="form-control" id="customize.sort" name="customize.sort">
+                    <option value="select" selected="">(선택)</option>
+                    <option value="dangerous">위험도 기준</option>
+                    <option value="Number-of-beds">병상수 기준</option>
+                    <option value="Intentionality">고의성 기준</option>
+                    <option value="occurrence-frequency">발생빈도 기준</option>
+                </select>
+                <br>
+                <hr>
+                <i>검색 조건 설명</i>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>1. </li>
+                    <li>2. </li>
+                    <li>3. </li>
+                    <li>4. </li>
+                    <li>5. </li>
                 <ul>
             </div>
             <div id="wrapper" wfd-id="299">
                 <div id="nav" wfd-id="299">
-                    title
+                    <label for="calender">작성 날짜:&nbsp;</label>
+                    <input id="calender" type="date" name="day-update-length-start"></input>
+                    <label for="calender">&nbsp;~&nbsp;</label>
+                    <input id="calender2" type="date" name="day-update-length-end"></input>
+                    <label for="department">진료과명:&nbsp;</label>
+                    <select class="form-control" id="department"name="department-name">
+                        <option value="select-all" selected="">모두</option>
+                        <option value="select1">산부인과</option>
+                        <option value="select2">피부과</option>
+                        <option value="select3">안과</option>
+                        <option value="select4">이비인후과</option>
+                        <option value="select5">정신과</option>
+                        <option value="select6">마취통증의학과</option>
+                        <option value="select7">가정의학과</option>
+                        <option value="select8">응급의학과</option>
+                        <option value="select9">재활의학과</option>
+                        <option value="select10">영상의학과</option>
+                        <option value="select11">방사선종양학과</option>
+                        <option value="select12">핵의학과</option>
+                        <option value="select13">진단검사의학과</option>
+                        <option value="select14">병리과</option>
+                        <option value="select15">의공학과</option>
+                        <option value="select16">한방과</option>
+                        <option value="select17">대장항문</option>
+                        <option value="select18">성형외과</option>
+                        <option value="select19">신경외과</option>
+                        <option value="select20">외과</option>
+                        <option value="select21">정형외과</option>
+                        <option value="select22">흉부외과</option>
+                        <option value="select23">감염내과</option>
+                        <option value="select24">내분비내과</option>
+                        <option value="select25">류마티스내과</option>
+                        <option value="select26">순환기내과</option>
+                        <option value="select27">신장내과</option>
+                        <option value="select28">알레르기내과</option>
+                        <option value="select29">혈액종양내과</option>
+                        <option value="select30">호흡기내과</option>
+                        <option value="select31">치과</option>
+                    </select>
+                    <button id="search">검색</button>
                 </div>
                 <div id="main-content" wfd-id="299">
                     data table
@@ -96,6 +147,44 @@
                                 <th>0</th>
                             </tr>
                         </tbody>
+                    </table>
+                    <table border="1" bordercolor="blue" width ="500" height="300" align = "center" >
+                        <tr bgcolor="blue" align ="center">
+                            <p><td colspan = "3" span style="color:white">오늘의 수입/지출</td></p>
+                        </tr>
+                        <tr align = "center" bgcolor="skybule">
+                            <td>내용</td>
+                            <td>수입</td>
+                            <td>지출</td>
+                        </tr>
+                        <tr>
+                            <td>월급!</td>
+                            <td>1,000,000</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>점심값</td>
+                            <td></td>
+                            <td>5,000</td>
+                        </tr>
+                        <tr>
+                            <td>부모님선물</td>
+                            <td></td>
+                            <td>30,000</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3" align = "center" bgcolor="skyblue">총계</td>
+                            <td>수입</td>
+                            <td>지출</td>
+                        </tr>
+                        <tr>
+                            <td>1,000,000</td>
+                            <td>35,000</td>	
+                        </tr>
+                        <tr>
+                            <td>남은돈</td>
+                            <td>965,000</td>
+                        </tr>
                     </table>
                 </div>
             </div>

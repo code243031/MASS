@@ -44,14 +44,13 @@
   background-color: #4d4d4d;
 }
 
-#content-wrap {
-    padding: 15px;
-    margin: 25px;
-    background: white;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #000;
-    height: 1000px;
+#wrap {
+  margin-left: 15%;
+  margin-right: 15%;
+  background: white;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
 #footer {
@@ -90,19 +89,10 @@ hr {
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
-  bottom: 8px;
+  bottom: 30px;
   width: 100%;
   height: 20%;
   text-align: right;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
 }
 
 /* The dots/bullets/indicators */
@@ -142,14 +132,29 @@ hr {
 @media only screen and (max-width: 400px) {
   .text {
     font-size: 15px;
-    
   }
 }
 
-#main-content-text1 {
+#main-content-bottom {
   text-align: center;
+  margin: 20px;
 }
 
-#main-content-text2 {
-  text-align: center;
+#main-content-bottom:after{
+  clear: both; 
+  display: block; 
+  content: '' 
+}
+
+#main-content-obj-prop {
+  border-right: 1px solid #000;
+  width: 50%;
+  float: left;
+  align-items: center;
+}
+
+#main-content-obj-list {
+  width: 50%;
+  float: left;
+  align-items: center;
 }
