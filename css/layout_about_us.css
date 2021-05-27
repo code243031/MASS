@@ -95,9 +95,11 @@
 
 #right-row .border-dev-info {
   height: 35%;
+  align-items: center;
 }
 
 .profile {
+  align-items: center;
   width: 80%;
   height: 1%;
   border-radius: 140px;

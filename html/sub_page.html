@@ -38,7 +38,7 @@
                 <select class="form-control" id="customize.sort" name="customize.sort">
                     <option value="select" selected="">(선택)</option>
                     <option value="dangerous">위험도 기준</option>
-                    <option value="Number-of-beds">병상수 기준</option>
+                    <option value="Number-of-beds">병상규모 기준</option>
                     <option value="Intentionality">고의성 기준</option>
                     <option value="occurrence-frequency">발생빈도 기준</option>
                 </select>
@@ -46,11 +46,23 @@
                 <hr>
                 <i>검색 조건 설명</i>
                 <ul>
-                    <li>1. </li>
-                    <li>2. </li>
-                    <li>3. </li>
-                    <li>4. </li>
-                    <li>5. </li>
+                    <li>
+                        위험도
+                        <p> - 의료사고로 발생한 사고의 위험정도를 나타냅니다.</p>
+                    </li>
+
+                    <li>
+                        병상규모
+                        <p> - 병원이 가지는 환자수용능력을 나타냅니다.</p>
+                    </li>
+                    <li>
+                        고의성
+                        <p> - 버러지</p>
+                    </li>
+                    <li>
+                        발생빈도
+                        <p> - 한 병원 내에서 발생한 의료사고의 빈도를 나타냅니다.</p>
+                    </li>
                 <ul>
             </div>
             <div id="wrapper" wfd-id="299">
@@ -98,94 +110,52 @@
                 </div>
                 <div id="main-content" wfd-id="299">
                     data table
-                    <table id="data-table">
-                        <thead>
-                            <tr>
-                                <!-- 테이블 미완. 도큐먼트 인계받은 후 마저 완성할 것 -->
-                                <th>1</th>
-                                <th>2</th>
-                                <th>3</th>
-                                <th>4</th>
-                                <th>5</th>
+                    <details>
+                        <summary>진달래꽃 - 엄마야 누나야 (김소월)</summary>
+                        <p>엄마야 누나야, 강변 살자.<br />
+                        뜰에는 반짝이는 금모래 빛<br />
+                        뒷문 밖에는 갈잎의 노래<br />
+                        엄마야 누나야, 강변 살자.</p>
+                        <!-- 테이블 미완. 도큐먼트 인계받은 후 마저 완성할 것 -->
+                        <table border="1" bordercolor="blue" width ="500" height="300" align = "center" >
+                            <tr bgcolor="blue" align ="center">
+                                <p><td colspan = "3" span style="color:white">오늘의 수입/지출</td></p>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <!-- 테이블 미완. 도큐먼트 인계받은 후 마저 완성할 것 -->
-                                <th>6</th>
-                                <th>7</th>
-                                <th>8</th>
-                                <th>9</th>
-                                <th>0</th>
+                            <tr align = "center" bgcolor="skybule">
+                                <td>내용</td>
+                                <td>수입</td>
+                                <td>지출</td>
                             </tr>
                             <tr>
-                                <th>1</th>
-                                <th>2</th>
-                                <th>3</th>
-                                <th>4</th>
-                                <th>5</th>
+                                <td>월급!</td>
+                                <td>1,000,000</td>
+                                <td></td>
                             </tr>
                             <tr>
-                                <th>6</th>
-                                <th>7</th>
-                                <th>8</th>
-                                <th>9</th>
-                                <th>0</th>
+                                <td>점심값</td>
+                                <td></td>
+                                <td>5,000</td>
                             </tr>
                             <tr>
-                                <th>1</th>
-                                <th>2</th>
-                                <th>3</th>
-                                <th>4</th>
-                                <th>5</th>
+                                <td>부모님선물</td>
+                                <td></td>
+                                <td>30,000</td>
                             </tr>
                             <tr>
-                                <th>6</th>
-                                <th>7</th>
-                                <th>8</th>
-                                <th>9</th>
-                                <th>0</th>
+                                <td rowspan="3" align = "center" bgcolor="skyblue">총계</td>
+                                <td>수입</td>
+                                <td>지출</td>
                             </tr>
-                        </tbody>
-                    </table>
-                    <table border="1" bordercolor="blue" width ="500" height="300" align = "center" >
-                        <tr bgcolor="blue" align ="center">
-                            <p><td colspan = "3" span style="color:white">오늘의 수입/지출</td></p>
-                        </tr>
-                        <tr align = "center" bgcolor="skybule">
-                            <td>내용</td>
-                            <td>수입</td>
-                            <td>지출</td>
-                        </tr>
-                        <tr>
-                            <td>월급!</td>
-                            <td>1,000,000</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>점심값</td>
-                            <td></td>
-                            <td>5,000</td>
-                        </tr>
-                        <tr>
-                            <td>부모님선물</td>
-                            <td></td>
-                            <td>30,000</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3" align = "center" bgcolor="skyblue">총계</td>
-                            <td>수입</td>
-                            <td>지출</td>
-                        </tr>
-                        <tr>
-                            <td>1,000,000</td>
-                            <td>35,000</td>	
-                        </tr>
-                        <tr>
-                            <td>남은돈</td>
-                            <td>965,000</td>
-                        </tr>
-                    </table>
+                            <tr>
+                                <td>1,000,000</td>
+                                <td>35,000</td>	
+                            </tr>
+                            <tr>
+                                <td>남은돈</td>
+                                <td>965,000</td>
+                            </tr>
+                        </table>
+                    </details>
                 </div>
             </div>
         </div>
