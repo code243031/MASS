@@ -1,11 +1,11 @@
 Project MASS
 ===============
 ### 목차
-[1. What is the MASS?](#What-is-the-MASS?)  
-[2. Development environment](#Development-environment)  
-[3. Documents](#Documents)  
-[4. Developers](#Developers)  
-[5. Others](#Others)  
+1. [What is the MASS?](#What-is-the-MASS?)  
+2. [Development environment](#Development-environment)  
+3. [Documents](#Documents)  
+4. [Developers](#Developers)  
+5. [Others](#Others)  
   
 ## What is the MASS?
 ![alt Text](https://github.com/code243031/MASS/blob/main/res/img/banner.png)  
@@ -23,8 +23,55 @@ MASS는 Medical Accident Statistics Site의 줄임말로 국내 의료사고 및
   
 
 ## Documents
-_준비중..._  
-- [라이선스](https://github.com/code243031/MASS/blob/main/LICENSE)
+
+**1. Project Directory**  
+
+디렉토리 구조는 다음과 같다.
+> main  
+├ JAVA ┬ MASS  
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ file  
+│  
+├ css  
+├ html  
+├ js  
+└ res ┬ json  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├ csv  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ img  
+
+* JAVA  
+웹 서버 구축에 사용된 JAVA Maven프로젝트와 의료사고 및 의료분쟁 공공데이터 추출 및 분석에 사용되는 자바 파일들이 있는 디렉토리이다. MASS폴더에 Maven프로젝트가, file에 자바 파일들이 들어있다.
+  
+* js  
+웹 페이지 동작에 사용되는 자바스크립트 파일들이 들어있는 디렉토리다.
+  
+* html  
+웹 페이지를 구성하고 만들어내는 HTML파일들이 들어있는 디렉토리다.
+  
+* css  
+웹 페이지 스타일 구축에 사용되는 css파일들이 들어있는 디렉토리다.
+
+* res  
+프로젝트의 리소스가 모여있는 디렉토리다. json에는 공공데이터로부터 추출한 자료들 및 다른 자료를 포함한 json파일들이 들어있고, csv에는 공공데이터 포털에서 다운로드 받은 엑셀 테이블 파일들이, img에는 웹 페이지 및 기타 문서들의 제작에 사용된 이미지 파일들이 들어있다.
+  
+**2. Webpage Example**  
+![Alt image](https://github.com/code243031/MASS/blob/main/res/img/01.jpg)
+* Home  
+메인 페이지. 사이트 개설 목적 및 개발 방향에 대해 요약해놓은 페이지다.  
+
+* About us  
+프로젝트 참여자들의 정보가 들어있는 페이지다.  
+
+* Analysis Data  
+의료사고 및 의료분쟁 분석 데이터 가공 데이터를 조회할 수 있는 페이지다.  
+
+* Release
+공공 데이터 원본과 분석 자료에 대한 JSON파일을 바로 다운로드 받아볼 수 있는 페이지다.
+
+* Blog  
+개발팀장의 블로그로 연결된다.  
+
+**3. Applied Algorithm**  
+_준비중..._
   
 ## Developers
 > 마지막 수정일자 : 2021-05-28  
