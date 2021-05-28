@@ -1,7 +1,0 @@
-package sample;
-
-public class Sample {
-	public static void main(String[] argv) {
-		System.out.println("°³ ¾¾¹ß Á¿°°³× ÁøÂ¥");
-	}
-}
