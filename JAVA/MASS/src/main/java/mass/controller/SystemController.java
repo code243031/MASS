@@ -36,8 +36,8 @@ public class SystemController {
 		BufferedReader pr = null;
 		String line, line2;
 		
-		String path = "D:\\컴퓨터공학\\java\\workspace\\mass\\src\\main\\resources\\static\\2.csv";
-		String path2 = "D:\\컴퓨터공학\\java\\workspace\\mass\\src\\main\\resources\\static\\의료기관평가인증원_환자안전 사고데이터_20181231.csv";
+		String path = "C:\\Users\\USER\\Documents\\mass3\\JAVA\\MASS\\src\\main\\resources\\static\\2.csv";
+		String path2 = "C:\\Users\\USER\\Documents\\mass3\\JAVA\\MASS\\src\\main\\resources\\static\\의료기관평가인증원_환자안전 사고데이터_20181231.csv";
 		
 		
 		JsonObject jsonObject = new JsonObject();
@@ -51,19 +51,19 @@ public class SystemController {
 			int rows2 = 9251;
 			int cols2 = 20;
 
-			int[] Hname = new int[7];// 0.병원 	1.상급종합병원	2.종합병원		3.요양병원		4.약국	5.불명확
-			int[] ScaleCount = new int[3]; //0. 500이상 	1. 200~500 		2. 불명확 
+			int[] Hname = new int[7];// 0.蹂묒썝 	1.�긽湲됱쥌�빀蹂묒썝	2.醫낇빀蹂묒썝		3.�슂�뼇蹂묒썝		4.�빟援�	5.遺덈챸�솗
+			int[] ScaleCount = new int[3]; //0. 500�씠�긽 	1. 200~500 		2. 遺덈챸�솗 
 			int[][] ms = new int[10][7];//
 			String[] money = new String[10];
-			String[][] matrix= new String[rows][cols];//csv 파일 넣을 배열 선언
-			String[][] matrix2= new String[rows2][cols2];//csv 파일 넣을 배열 선언
+			String[][] matrix= new String[rows][cols];//csv �뙆�씪 �꽔�쓣 諛곗뿴 �꽑�뼵
+			String[][] matrix2= new String[rows2][cols2];//csv �뙆�씪 �꽔�쓣 諛곗뿴 �꽑�뼵
 			int row = 0;
 			while((line = br.readLine()) != null) {				
 				if (line.isEmpty()) {
 			        continue;
 			    }
-				String[] temp = line.split(","); //  ,로 구분
-			    for(int col= 0; col < cols; col++) {// 배열에 집어 넣기
+				String[] temp = line.split(","); //  ,濡� 援щ텇
+			    for(int col= 0; col < cols; col++) {// 諛곗뿴�뿉 吏묒뼱 �꽔湲�
 			        matrix[row][col]= temp[col];
 			    }
 			    row++;
@@ -73,8 +73,8 @@ public class SystemController {
 				if (line2.isEmpty()) {
 			        continue;
 			    }
-				String[] temp = line2.split(","); //  ,로 구분
-			    for(int col= 0; col < cols2; col++) {// 배열에 집어 넣기
+				String[] temp = line2.split(","); //  ,濡� 援щ텇
+			    for(int col= 0; col < cols2; col++) {// 諛곗뿴�뿉 吏묒뼱 �꽔湲�
 			        matrix2[row][col]= temp[col];
 			    }
 			    row++;
@@ -86,35 +86,35 @@ public class SystemController {
 					
 					if(matrix[i][j] == null)
 						continue;
-					if(matrix[i][2].contains("산부인과"))
+					if(matrix[i][2].contains("�궛遺��씤怨�"))
 					{ 	
 						
-						if(matrix[i][j].contains("사망"))
+						if(matrix[i][j].contains("�궗留�"))
 						{
 							ms[0][0]++;
 							break;
 						}
-						else if(matrix[i][j].contains("증후군") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("利앺썑援�") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[0][1]++;
 							break;
 						}
-						else if(matrix[i][j].contains("마비") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("留덈퉬") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[0][2]++;
 							break;
 						}
-						else if(matrix[i][j].contains("장애") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("�옣�븷") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[0][3]++;
 							break;
 						}
-						else if(matrix[i][j].contains("진단") && matrix[i][j].contains("지연"))
+						else if(matrix[i][j].contains("吏꾨떒") && matrix[i][j].contains("吏��뿰"))
 						{
 							ms[0][4]++;
 							break;
 						}
-						else if(matrix[i][j].contains("재수술"))
+						else if(matrix[i][j].contains("�옱�닔�닠"))
 						{
 							ms[0][5]++;
 							break;
@@ -125,34 +125,34 @@ public class SystemController {
 							break;
 						}
 					}
-					else if(matrix[i][2].contains("정형외과"))
+					else if(matrix[i][2].contains("�젙�삎�쇅怨�"))
 					{ 	
-						if(matrix[i][j].contains("사망"))
+						if(matrix[i][j].contains("�궗留�"))
 						{
 							ms[1][0]++;
 							break;
 						}
-						else if(matrix[i][j].contains("증후군") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("利앺썑援�") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[1][1]++;
 							break;
 						}
-						else if(matrix[i][j].contains("마비") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("留덈퉬") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[1][2]++;
 							break;
 						}
-						else if(matrix[i][j].contains("장애") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("�옣�븷") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[1][3]++;
 							break;
 						}
-						else if(matrix[i][j].contains("진단") && matrix[i][j].contains("지연"))
+						else if(matrix[i][j].contains("吏꾨떒") && matrix[i][j].contains("吏��뿰"))
 						{
 							ms[1][4]++;
 							break;
 						}
-						else if(matrix[i][j].contains("재수술"))
+						else if(matrix[i][j].contains("�옱�닔�닠"))
 						{
 							ms[1][5]++;
 							break;
@@ -163,34 +163,34 @@ public class SystemController {
 							break;
 						}
 					}
-					else if(matrix[i][2].contains("신경외과"))
+					else if(matrix[i][2].contains("�떊寃쎌쇅怨�"))
 					{ 	
-						if(matrix[i][j].contains("사망"))
+						if(matrix[i][j].contains("�궗留�"))
 						{
 							ms[2][0]++;
 							break;
 						}
-						else if(matrix[i][j].contains("증후군") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("利앺썑援�") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[2][1]++;
 							break;
 						}
-						else if(matrix[i][j].contains("마비") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("留덈퉬") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[2][2]++;
 							break;
 						}
-						else if(matrix[i][j].contains("장애") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("�옣�븷") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[2][3]++;
 							break;
 						}
-						else if(matrix[i][j].contains("진단") && matrix[i][j].contains("지연"))
+						else if(matrix[i][j].contains("吏꾨떒") && matrix[i][j].contains("吏��뿰"))
 						{
 							ms[2][4]++;
 							break;
 						}
-						else if(matrix[i][j].contains("재수술"))
+						else if(matrix[i][j].contains("�옱�닔�닠"))
 						{
 							ms[2][5]++;
 							break;
@@ -201,36 +201,36 @@ public class SystemController {
 							break;
 						}
 					}
-					else if(matrix[i][2].contains("내과"))
+					else if(matrix[i][2].contains("�궡怨�"))
 					{ 	
-						if(matrix[i][2].contains("소화기"))
+						if(matrix[i][2].contains("�냼�솕湲�"))
 						{ 	
-							if(matrix[i][j].contains("사망"))
+							if(matrix[i][j].contains("�궗留�"))
 							{
 								ms[3][0]++;
 								break;
 							}
-							else if(matrix[i][j].contains("증후군") && matrix[i][j].contains("발생"))
+							else if(matrix[i][j].contains("利앺썑援�") && matrix[i][j].contains("諛쒖깮"))
 							{
 								ms[3][1]++;
 								break;
 							}
-							else if(matrix[i][j].contains("마비") && matrix[i][j].contains("발생"))
+							else if(matrix[i][j].contains("留덈퉬") && matrix[i][j].contains("諛쒖깮"))
 							{
 								ms[3][2]++;
 								break;
 							}
-							else if(matrix[i][j].contains("장애") && matrix[i][j].contains("발생"))
+							else if(matrix[i][j].contains("�옣�븷") && matrix[i][j].contains("諛쒖깮"))
 							{
 								ms[3][3]++;
 								break;
 							}
-							else if(matrix[i][j].contains("진단") && matrix[i][j].contains("지연"))
+							else if(matrix[i][j].contains("吏꾨떒") && matrix[i][j].contains("吏��뿰"))
 							{
 								ms[3][4]++;
 								break;
 							}
-							else if(matrix[i][j].contains("재수술"))
+							else if(matrix[i][j].contains("�옱�닔�닠"))
 							{
 								ms[3][5]++;
 								break;
@@ -241,34 +241,34 @@ public class SystemController {
 								break;
 							}
 						}
-						else if(matrix[i][2].contains("호흡기"))
+						else if(matrix[i][2].contains("�샇�씉湲�"))
 						{ 	
-							if(matrix[i][j].contains("사망"))
+							if(matrix[i][j].contains("�궗留�"))
 							{
 								ms[4][0]++;
 								break;
 							}
-							else if(matrix[i][j].contains("증후군") && matrix[i][j].contains("발생"))
+							else if(matrix[i][j].contains("利앺썑援�") && matrix[i][j].contains("諛쒖깮"))
 							{
 								ms[4][1]++;
 								break;
 							}
-							else if(matrix[i][j].contains("마비") && matrix[i][j].contains("발생"))
+							else if(matrix[i][j].contains("留덈퉬") && matrix[i][j].contains("諛쒖깮"))
 							{
 								ms[4][2]++;
 								break;
 							}
-							else if(matrix[i][j].contains("장애") && matrix[i][j].contains("발생"))
+							else if(matrix[i][j].contains("�옣�븷") && matrix[i][j].contains("諛쒖깮"))
 							{
 								ms[4][3]++;
 								break;
 							}
-							else if(matrix[i][j].contains("진단") && matrix[i][j].contains("지연"))
+							else if(matrix[i][j].contains("吏꾨떒") && matrix[i][j].contains("吏��뿰"))
 							{
 								ms[4][4]++;
 								break;
 							}
-							else if(matrix[i][j].contains("재수술"))
+							else if(matrix[i][j].contains("�옱�닔�닠"))
 							{
 								ms[4][5]++;
 								break;
@@ -281,32 +281,32 @@ public class SystemController {
 						}
 						else
 						{
-							if(matrix[i][j].contains("사망"))
+							if(matrix[i][j].contains("�궗留�"))
 							{
 								ms[5][0]++;
 								break;
 							}
-							else if(matrix[i][j].contains("증후군") && matrix[i][j].contains("발생"))
+							else if(matrix[i][j].contains("利앺썑援�") && matrix[i][j].contains("諛쒖깮"))
 							{
 								ms[5][1]++;
 								break;
 							}
-							else if(matrix[i][j].contains("마비") && matrix[i][j].contains("발생"))
+							else if(matrix[i][j].contains("留덈퉬") && matrix[i][j].contains("諛쒖깮"))
 							{
 								ms[5][2]++;
 								break;
 							}
-							else if(matrix[i][j].contains("장애") && matrix[i][j].contains("발생"))
+							else if(matrix[i][j].contains("�옣�븷") && matrix[i][j].contains("諛쒖깮"))
 							{
 								ms[5][3]++;
 								break;
 							}
-							else if(matrix[i][j].contains("진단") && matrix[i][j].contains("지연"))
+							else if(matrix[i][j].contains("吏꾨떒") && matrix[i][j].contains("吏��뿰"))
 							{
 								ms[5][4]++;
 								break;
 							}
-							else if(matrix[i][j].contains("재수술"))
+							else if(matrix[i][j].contains("�옱�닔�닠"))
 							{
 								ms[5][5]++;
 								break;
@@ -318,34 +318,34 @@ public class SystemController {
 							}
 						}
 					}
-					else if(matrix[i][2].contains("안과"))
+					else if(matrix[i][2].contains("�븞怨�"))
 					{ 	
-						if(matrix[i][j].contains("사망"))
+						if(matrix[i][j].contains("�궗留�"))
 						{
 							ms[6][0]++;
 							break;
 						}
-						else if(matrix[i][j].contains("증후군") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("利앺썑援�") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[6][1]++;
 							break;
 						}
-						else if(matrix[i][j].contains("마비") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("留덈퉬") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[6][2]++;
 							break;
 						}
-						else if(matrix[i][j].contains("장애") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("�옣�븷") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[6][3]++;
 							break;
 						}
-						else if(matrix[i][j].contains("진단") && matrix[i][j].contains("지연"))
+						else if(matrix[i][j].contains("吏꾨떒") && matrix[i][j].contains("吏��뿰"))
 						{
 							ms[6][4]++;
 							break;
 						}
-						else if(matrix[i][j].contains("재수술"))
+						else if(matrix[i][j].contains("�옱�닔�닠"))
 						{
 							ms[6][5]++;
 							break;
@@ -356,34 +356,34 @@ public class SystemController {
 							break;
 						}
 					}
-					else if(matrix[i][2].contains("흉부외과"))
+					else if(matrix[i][2].contains("�쓨遺��쇅怨�"))
 					{ 	
-						if(matrix[i][j].contains("사망"))
+						if(matrix[i][j].contains("�궗留�"))
 						{
 							ms[7][0]++;
 							break;
 						}
-						else if(matrix[i][j].contains("증후군") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("利앺썑援�") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[7][1]++;					
 							break;
 						}
-						else if(matrix[i][j].contains("마비") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("留덈퉬") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[7][2]++;
 							break;
 						}
-						else if(matrix[i][j].contains("장애") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("�옣�븷") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[7][3]++;
 							break;
 						}
-						else if(matrix[i][j].contains("진단") && matrix[i][j].contains("지연"))
+						else if(matrix[i][j].contains("吏꾨떒") && matrix[i][j].contains("吏��뿰"))
 						{
 							ms[7][4]++;
 							break;
 						}
-						else if(matrix[i][j].contains("재수술"))
+						else if(matrix[i][j].contains("�옱�닔�닠"))
 						{
 							ms[7][5]++;
 							break;
@@ -394,34 +394,34 @@ public class SystemController {
 							break;
 						}
 					}
-					else if(matrix[i][2].contains("이비인후과"))
+					else if(matrix[i][2].contains("�씠鍮꾩씤�썑怨�"))
 					{ 
-						if(matrix[i][j].contains("사망"))
+						if(matrix[i][j].contains("�궗留�"))
 						{
 							ms[8][0]++;
 							break;
 						}
-						else if(matrix[i][j].contains("증후군") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("利앺썑援�") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[8][1]++;
 							break;
 						}
-						else if(matrix[i][j].contains("마비") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("留덈퉬") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[8][2]++;
 							break;
 						}
-						else if(matrix[i][j].contains("장애") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("�옣�븷") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[8][3]++;
 							break;
 						}
-						else if(matrix[i][j].contains("진단") && matrix[i][j].contains("지연"))
+						else if(matrix[i][j].contains("吏꾨떒") && matrix[i][j].contains("吏��뿰"))
 						{
 							ms[8][4]++;
 							break;
 						}
-						else if(matrix[i][j].contains("재수술"))
+						else if(matrix[i][j].contains("�옱�닔�닠"))
 						{
 							ms[8][5]++;
 							break;
@@ -434,32 +434,32 @@ public class SystemController {
 					}
 					else
 					{ 	
-						if(matrix[i][j].contains("사망"))
+						if(matrix[i][j].contains("�궗留�"))
 						{
 							ms[9][0]++;
 							break;
 						}
-						else if(matrix[i][j].contains("증후군") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("利앺썑援�") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[9][1]++;
 							break;
 						}
-						else if(matrix[i][j].contains("마비") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("留덈퉬") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[9][2]++;
 							break;
 						}
-						else if(matrix[i][j].contains("장애") && matrix[i][j].contains("발생"))
+						else if(matrix[i][j].contains("�옣�븷") && matrix[i][j].contains("諛쒖깮"))
 						{
 							ms[9][3]++;
 							break;
 						}
-						else if(matrix[i][j].contains("진단") && matrix[i][j].contains("지연"))
+						else if(matrix[i][j].contains("吏꾨떒") && matrix[i][j].contains("吏��뿰"))
 						{
 							ms[9][4]++;							
 							break;
 						}
-						else if(matrix[i][j].contains("재수술"))
+						else if(matrix[i][j].contains("�옱�닔�닠"))
 						{							ms[9][5]++;
 							
 							break;
@@ -479,25 +479,25 @@ public class SystemController {
 			{
 				if(matrix[i][0] == null)
 					continue;
-				if(matrix[i][2].contains("산부인과"))
+				if(matrix[i][2].contains("�궛遺��씤怨�"))
 				{ 	
 					money[0] += matrix[i][12] + "";
 				}
-				else if(matrix[i][2].contains("정형외과"))
+				else if(matrix[i][2].contains("�젙�삎�쇅怨�"))
 				{ 	
 					money[1] += matrix[i][12];
 				}
-				else if(matrix[i][2].contains("신경외과"))
+				else if(matrix[i][2].contains("�떊寃쎌쇅怨�"))
 				{ 	
 					money[2] += matrix[i][12];
 				}
-				else if(matrix[i][2].contains("내과"))
+				else if(matrix[i][2].contains("�궡怨�"))
 				{ 	
-					if(matrix[i][2].contains("소화기"))
+					if(matrix[i][2].contains("�냼�솕湲�"))
 					{ 	
 						money[3] += matrix[i][12] + "";
 					}
-					else if(matrix[i][2].contains("호흡기"))
+					else if(matrix[i][2].contains("�샇�씉湲�"))
 					{ 	
 						money[4] += matrix[i][12] + "";
 					}
@@ -506,15 +506,15 @@ public class SystemController {
 						money[5] += matrix[i][12] + "";
 					}
 				}
-				else if(matrix[i][2].contains("안과"))
+				else if(matrix[i][2].contains("�븞怨�"))
 				{ 	
 					money[6] += matrix[i][12] + "";
 				}
-				else if(matrix[i][2].contains("흉부외과"))
+				else if(matrix[i][2].contains("�쓨遺��쇅怨�"))
 				{ 	
 					money[7] += matrix[i][12] + "";
 				}
-				else if(matrix[i][2].contains("이비인후과"))
+				else if(matrix[i][2].contains("�씠鍮꾩씤�썑怨�"))
 				{ 	
 					money[8] += matrix[i][12] + "";
 				}
@@ -527,7 +527,7 @@ public class SystemController {
 		
 				
 			
-			for(int i = 1; i < rows2; i++)//0. 500이상 	1. 200~500 		2. 불명확 
+			for(int i = 1; i < rows2; i++)//0. 500�씠�긽 	1. 200~500 		2. 遺덈챸�솗 
 			{
 				if(matrix2[i][7].contains("500"))
 					if(matrix2[i][7].contains("200"))
@@ -537,18 +537,18 @@ public class SystemController {
 					
 			}
 			
-			for(int i = 1; i < rows2; i++)// 0.병원 	1.상급종합병원	2.종합병원		3.요양병원		4.약국	5.불명확
+			for(int i = 1; i < rows2; i++)// 0.蹂묒썝 	1.�긽湲됱쥌�빀蹂묒썝	2.醫낇빀蹂묒썝		3.�슂�뼇蹂묒썝		4.�빟援�	5.遺덈챸�솗
 			{
-				if(matrix2[i][6].contains("병원"))
-					if(matrix2[i][6].contains("상급종합"))
+				if(matrix2[i][6].contains("蹂묒썝"))
+					if(matrix2[i][6].contains("�긽湲됱쥌�빀"))
 						Hname[1]++;
-					else if(matrix2[i][6].contains("요양"))
+					else if(matrix2[i][6].contains("�슂�뼇"))
 						Hname[3]++;
-					else if(matrix2[i][6].contains("종합"))
+					else if(matrix2[i][6].contains("醫낇빀"))
 						Hname[2]++;
 					else
 						Hname[0]++;
-				else if(matrix2[i][6].contains("약국"))
+				else if(matrix2[i][6].contains("�빟援�"))
 					Hname[4]++;
 				else
 					Hname[5]++;
@@ -558,23 +558,23 @@ public class SystemController {
 		
 			JsonArray HArray = new JsonArray();
 	        JsonObject HInfo = new JsonObject();
-	        HInfo.addProperty("location", "병원");
+	        HInfo.addProperty("location", "蹂묒썝");
 			HInfo.addProperty("count", Hname[0] + "");
 			HArray.add(HInfo);
 			HInfo = new JsonObject();
-			HInfo.addProperty("location", "종합병원");
+			HInfo.addProperty("location", "醫낇빀蹂묒썝");
 			HInfo.addProperty("count", Hname[2] + "");
 			HArray.add(HInfo);
 			HInfo = new JsonObject();
-			HInfo.addProperty("location", "상급종합병원");
+			HInfo.addProperty("location", "�긽湲됱쥌�빀蹂묒썝");
 			HInfo.addProperty("count", Hname[1] + "");
 			HArray.add(HInfo);
 			HInfo = new JsonObject();
-			HInfo.addProperty("location", "약국");
+			HInfo.addProperty("location", "�빟援�");
 			HInfo.addProperty("count", Hname[4] + "");
 			HArray.add(HInfo);
 			HInfo = new JsonObject();
-			HInfo.addProperty("location", "불명확");
+			HInfo.addProperty("location", "遺덈챸�솗");
 			HInfo.addProperty("count", Hname[5] + "");
 			HArray.add(HInfo);
 			
@@ -583,15 +583,15 @@ public class SystemController {
 	                
 			JsonArray SArray = new JsonArray();
 			JsonObject SInfo = new JsonObject();
-	        SInfo.addProperty("range", "500이상");
+	        SInfo.addProperty("range", "500�씠�긽");
 	        SInfo.addProperty("count", ScaleCount[0] + "");
 	        SArray.add(SInfo);
 	        SInfo = new JsonObject();
-	        SInfo.addProperty("range", "200이상 500미만");
+	        SInfo.addProperty("range", "200�씠�긽 500誘몃쭔");
 	        SInfo.addProperty("count", ScaleCount[1] + "");
 	        SArray.add(SInfo);
 	        SInfo = new JsonObject();
-	        SInfo.addProperty("range", "불명확");
+	        SInfo.addProperty("range", "遺덈챸�솗");
 	        SInfo.addProperty("count", ScaleCount[2] + "");
 	        SArray.add(SInfo);
 	        
@@ -599,36 +599,36 @@ public class SystemController {
 	        mv.addObject("SArray", SArray.toString());
 	        
 			
-			//종합
-			JsonArray OAGArray = new JsonArray();//산부인과
-			JsonObject OAGInfo = new JsonObject();//산부인과
-			JsonArray GastroenterologyArray = new JsonArray();//소화기내과
-			JsonObject GastroenterologyInfo = new JsonObject();//소화기내과
-			JsonArray OrthopedicsArray = new JsonArray();//정형외과
-			JsonObject OrthopedicsInfo = new JsonObject();//정형외과
-			JsonArray respiratoryArray = new JsonArray();//호흡기내과
-			JsonObject respiratoryInfo = new JsonObject();//호흡기내과
-			JsonArray neurosurgeryArray = new JsonArray();//신경외과
-			JsonObject neurosurgeryInfo = new JsonObject();//신경외과
-			JsonArray medicineArray = new JsonArray();//내과
-			JsonObject medicineInfo = new JsonObject();//내과
-			JsonArray OphthalmologyArray = new JsonArray();//안과
-			JsonObject OphthalmologyInfo = new JsonObject();//안과
-			JsonArray ThoracicArray = new JsonArray();//흉부외과
-			JsonObject ThoracicInfo = new JsonObject();//흉부외과
-			JsonArray OtorhinolaryngologyArray = new JsonArray();//이비인후과
-			JsonObject OtorhinolaryngologyInfo = new JsonObject();//이비인후과
-			JsonArray DentistArray = new JsonArray();//치과
-			JsonObject DentistInfo = new JsonObject();//치과
+			//醫낇빀
+			JsonArray OAGArray = new JsonArray();//�궛遺��씤怨�
+			JsonObject OAGInfo = new JsonObject();//�궛遺��씤怨�
+			JsonArray GastroenterologyArray = new JsonArray();//�냼�솕湲곕궡怨�
+			JsonObject GastroenterologyInfo = new JsonObject();//�냼�솕湲곕궡怨�
+			JsonArray OrthopedicsArray = new JsonArray();//�젙�삎�쇅怨�
+			JsonObject OrthopedicsInfo = new JsonObject();//�젙�삎�쇅怨�
+			JsonArray respiratoryArray = new JsonArray();//�샇�씉湲곕궡怨�
+			JsonObject respiratoryInfo = new JsonObject();//�샇�씉湲곕궡怨�
+			JsonArray neurosurgeryArray = new JsonArray();//�떊寃쎌쇅怨�
+			JsonObject neurosurgeryInfo = new JsonObject();//�떊寃쎌쇅怨�
+			JsonArray medicineArray = new JsonArray();//�궡怨�
+			JsonObject medicineInfo = new JsonObject();//�궡怨�
+			JsonArray OphthalmologyArray = new JsonArray();//�븞怨�
+			JsonObject OphthalmologyInfo = new JsonObject();//�븞怨�
+			JsonArray ThoracicArray = new JsonArray();//�쓨遺��쇅怨�
+			JsonObject ThoracicInfo = new JsonObject();//�쓨遺��쇅怨�
+			JsonArray OtorhinolaryngologyArray = new JsonArray();//�씠鍮꾩씤�썑怨�
+			JsonObject OtorhinolaryngologyInfo = new JsonObject();//�씠鍮꾩씤�썑怨�
+			JsonArray DentistArray = new JsonArray();//移섍낵
+			JsonObject DentistInfo = new JsonObject();//移섍낵
 			
 			for(int i = 1; i < rows; i++)
 				{
 				if(matrix[i][2] == null)
 					continue;
-				if(matrix[i][2].contains("산부인과"))
+				if(matrix[i][2].contains("�궛遺��씤怨�"))
 				{ 	
 					OAGInfo = new JsonObject();
-					OAGInfo.addProperty("location", "산부인과");
+					OAGInfo.addProperty("location", "�궛遺��씤怨�");
 					OAGInfo.addProperty("event", matrix[i][3] + "");
 					OAGInfo.addProperty("hospital", matrix[i][8] + "");
 					OAGInfo.addProperty("patient", matrix[i][7] + "");
@@ -636,10 +636,10 @@ public class SystemController {
 					OAGInfo.addProperty("adjustment", matrix[i][10] + "");	
 					OAGArray.add(OAGInfo);
 				}
-				else if(matrix[i][2].contains("정형외과"))
+				else if(matrix[i][2].contains("�젙�삎�쇅怨�"))
 				{ 	
 					OrthopedicsInfo = new JsonObject();
-					OrthopedicsInfo.addProperty("location", "정형외과");
+					OrthopedicsInfo.addProperty("location", "�젙�삎�쇅怨�");
 					OrthopedicsInfo.addProperty("event", matrix[i][3] + "");
 					OrthopedicsInfo.addProperty("hospital", matrix[i][8] + "");
 					OrthopedicsInfo.addProperty("patient", matrix[i][7] + "");
@@ -647,10 +647,10 @@ public class SystemController {
 					OrthopedicsInfo.addProperty("adjustment", matrix[i][10] + "");	
 					OrthopedicsArray.add(OrthopedicsInfo);
 				}
-				else if(matrix[i][2].contains("신경외과"))
+				else if(matrix[i][2].contains("�떊寃쎌쇅怨�"))
 				{ 	
 					neurosurgeryInfo = new JsonObject();
-					neurosurgeryInfo.addProperty("location", "신경외과");
+					neurosurgeryInfo.addProperty("location", "�떊寃쎌쇅怨�");
 					neurosurgeryInfo.addProperty("event", matrix[i][3] + "");
 					neurosurgeryInfo.addProperty("hospital", matrix[i][8] + "");
 					neurosurgeryInfo.addProperty("patient", matrix[i][7] + "");
@@ -658,12 +658,12 @@ public class SystemController {
 					neurosurgeryInfo.addProperty("adjustment", matrix[i][10] + "");	
 					neurosurgeryArray.add(neurosurgeryInfo);
 				}
-				else if(matrix[i][2].contains("내과"))
+				else if(matrix[i][2].contains("�궡怨�"))
 				{ 	
-					if(matrix[i][2].contains("소화기"))
+					if(matrix[i][2].contains("�냼�솕湲�"))
 					{ 	
 						GastroenterologyInfo = new JsonObject();
-						GastroenterologyInfo.addProperty("location", "소화기내과");
+						GastroenterologyInfo.addProperty("location", "�냼�솕湲곕궡怨�");
 						GastroenterologyInfo.addProperty("event", matrix[i][3] + "");
 						GastroenterologyInfo.addProperty("hospital", matrix[i][8] + "");
 						GastroenterologyInfo.addProperty("patient", matrix[i][7] + "");
@@ -671,10 +671,10 @@ public class SystemController {
 						GastroenterologyInfo.addProperty("adjustment", matrix[i][10] + "");	
 						GastroenterologyArray.add(GastroenterologyInfo);
 					}
-					else if(matrix[i][2].contains("호흡기"))
+					else if(matrix[i][2].contains("�샇�씉湲�"))
 					{ 	
 						respiratoryInfo = new JsonObject();
-						respiratoryInfo.addProperty("location", "호흡기내과");
+						respiratoryInfo.addProperty("location", "�샇�씉湲곕궡怨�");
 						respiratoryInfo.addProperty("event", matrix[i][3] + "");
 						respiratoryInfo.addProperty("hospital", matrix[i][8] + "");
 						respiratoryInfo.addProperty("patient", matrix[i][7] + "");
@@ -685,7 +685,7 @@ public class SystemController {
 					else
 					{
 						medicineInfo = new JsonObject();
-						medicineInfo.addProperty("location", "내과");
+						medicineInfo.addProperty("location", "�궡怨�");
 						medicineInfo.addProperty("event", matrix[i][3] + "");
 						medicineInfo.addProperty("hospital", matrix[i][8] + "");
 						medicineInfo.addProperty("patient", matrix[i][7] + "");
@@ -694,10 +694,10 @@ public class SystemController {
 						medicineArray.add(medicineInfo);
 					}
 				}
-				else if(matrix[i][2].contains("안과"))
+				else if(matrix[i][2].contains("�븞怨�"))
 				{ 	
 					OphthalmologyInfo = new JsonObject();
-					OphthalmologyInfo.addProperty("location", "안과");
+					OphthalmologyInfo.addProperty("location", "�븞怨�");
 					OphthalmologyInfo.addProperty("event", matrix[i][3] + "");
 					OphthalmologyInfo.addProperty("hospital", matrix[i][8] + "");
 					OphthalmologyInfo.addProperty("patient", matrix[i][7] + "");
@@ -705,10 +705,10 @@ public class SystemController {
 					OphthalmologyInfo.addProperty("adjustment", matrix[i][10] + "");	
 					OphthalmologyArray.add(OphthalmologyInfo);
 				}
-				else if(matrix[i][2].contains("흉부외과"))
+				else if(matrix[i][2].contains("�쓨遺��쇅怨�"))
 				{ 	
 					ThoracicInfo = new JsonObject();
-					ThoracicInfo.addProperty("location", "흉부외과");
+					ThoracicInfo.addProperty("location", "�쓨遺��쇅怨�");
 					ThoracicInfo.addProperty("event", matrix[i][3] + "");
 					ThoracicInfo.addProperty("hospital", matrix[i][8] + "");
 					ThoracicInfo.addProperty("patient", matrix[i][7] + "");
@@ -716,10 +716,10 @@ public class SystemController {
 					ThoracicInfo.addProperty("adjustment", matrix[i][10] + "");	
 					ThoracicArray.add(ThoracicInfo);
 				}
-				else if(matrix[i][2].contains("이비인후과"))
+				else if(matrix[i][2].contains("�씠鍮꾩씤�썑怨�"))
 				{ 	
 					OtorhinolaryngologyInfo = new JsonObject();
-					OtorhinolaryngologyInfo.addProperty("location", "이비인후과");
+					OtorhinolaryngologyInfo.addProperty("location", "�씠鍮꾩씤�썑怨�");
 					OtorhinolaryngologyInfo.addProperty("event", matrix[i][3] + "");
 					OtorhinolaryngologyInfo.addProperty("hospital", matrix[i][8] + "");
 					OtorhinolaryngologyInfo.addProperty("patient", matrix[i][7] + "");
@@ -730,7 +730,7 @@ public class SystemController {
 				else
 				{ 	
 					DentistInfo = new JsonObject();
-					DentistInfo.addProperty("location", "치과");
+					DentistInfo.addProperty("location", "移섍낵");
 					DentistInfo.addProperty("event", matrix[i][3] + "");
 					DentistInfo.addProperty("hospital", matrix[i][8] + "");
 					DentistInfo.addProperty("patient", matrix[i][7] + "");
@@ -741,26 +741,26 @@ public class SystemController {
 				
 				}
 			
-			JsonArray OAGstatArray = new JsonArray();//산부인과
-			JsonObject OAGstatInfo = new JsonObject();//산부인과
-			JsonArray GastroenterologystatArray = new JsonArray();//소화기내과
-			JsonObject GastroenterologystatInfo = new JsonObject();//소화기내과
-			JsonArray OrthopedicsstatInfoArray = new JsonArray();//정형외과
-			JsonObject OrthopedicsstatInfo = new JsonObject();//정형외과
-			JsonArray respiratorystatArray = new JsonArray();//호흡기내과
-			JsonObject respiratorystatInfo = new JsonObject();//호흡기내과
-			JsonArray neurosurgerystatArray = new JsonArray();//신경외과
-			JsonObject neurosurgerystatInfo = new JsonObject();//신경외과
-			JsonArray medicinestatArray = new JsonArray();//내과
-			JsonObject medicinestatInfo = new JsonObject();//내과
-			JsonArray OphthalmologystatArray = new JsonArray();//안과
-			JsonObject OphthalmologystatInfo = new JsonObject();//안과
-			JsonArray ThoracicstatArray = new JsonArray();//흉부외과
-			JsonObject ThoracicstatInfo = new JsonObject();//흉부외과
-			JsonArray OtorhinolaryngologystatArray = new JsonArray();//이비인후과
-			JsonObject OtorhinolaryngologystatInfo = new JsonObject();//이비인후과
-			JsonArray DentiststatArray = new JsonArray();//치과
-			JsonObject DentiststatInfo = new JsonObject();//치과
+			JsonArray OAGstatArray = new JsonArray();//�궛遺��씤怨�
+			JsonObject OAGstatInfo = new JsonObject();//�궛遺��씤怨�
+			JsonArray GastroenterologystatArray = new JsonArray();//�냼�솕湲곕궡怨�
+			JsonObject GastroenterologystatInfo = new JsonObject();//�냼�솕湲곕궡怨�
+			JsonArray OrthopedicsstatInfoArray = new JsonArray();//�젙�삎�쇅怨�
+			JsonObject OrthopedicsstatInfo = new JsonObject();//�젙�삎�쇅怨�
+			JsonArray respiratorystatArray = new JsonArray();//�샇�씉湲곕궡怨�
+			JsonObject respiratorystatInfo = new JsonObject();//�샇�씉湲곕궡怨�
+			JsonArray neurosurgerystatArray = new JsonArray();//�떊寃쎌쇅怨�
+			JsonObject neurosurgerystatInfo = new JsonObject();//�떊寃쎌쇅怨�
+			JsonArray medicinestatArray = new JsonArray();//�궡怨�
+			JsonObject medicinestatInfo = new JsonObject();//�궡怨�
+			JsonArray OphthalmologystatArray = new JsonArray();//�븞怨�
+			JsonObject OphthalmologystatInfo = new JsonObject();//�븞怨�
+			JsonArray ThoracicstatArray = new JsonArray();//�쓨遺��쇅怨�
+			JsonObject ThoracicstatInfo = new JsonObject();//�쓨遺��쇅怨�
+			JsonArray OtorhinolaryngologystatArray = new JsonArray();//�씠鍮꾩씤�썑怨�
+			JsonObject OtorhinolaryngologystatInfo = new JsonObject();//�씠鍮꾩씤�썑怨�
+			JsonArray DentiststatArray = new JsonArray();//移섍낵
+			JsonObject DentiststatInfo = new JsonObject();//移섍낵
 
 			
 			
@@ -768,10 +768,10 @@ public class SystemController {
 			{
 			if(matrix[i][2] == null)
 				continue;
-			if(matrix[i][2].contains("산부인과"))
+			if(matrix[i][2].contains("�궛遺��씤怨�"))
 			{ 	
 				OAGstatInfo = new JsonObject();
-				OAGstatInfo.addProperty("location", "산부인과");
+				OAGstatInfo.addProperty("location", "�궛遺��씤怨�");
 				OAGstatInfo.addProperty("Dead", ms[0][0] + "");
 				OAGstatInfo.addProperty("syndrome", ms[0][1] + "");
 				OAGstatInfo.addProperty("paralysis", ms[0][2] + "");
@@ -782,10 +782,10 @@ public class SystemController {
 				OAGstatInfo.addProperty("money", money[0] + "");
 				OAGstatArray.add(OAGstatInfo);
 			}
-			else if(matrix[i][2].contains("정형외과"))
+			else if(matrix[i][2].contains("�젙�삎�쇅怨�"))
 			{ 	
 				OrthopedicsstatInfo = new JsonObject();
-				OrthopedicsstatInfo.addProperty("location", "정형외과");
+				OrthopedicsstatInfo.addProperty("location", "�젙�삎�쇅怨�");
 				OrthopedicsstatInfo.addProperty("Dead", ms[1][0] + "");
 				OrthopedicsstatInfo.addProperty("syndrome", ms[1][1] + "");
 				OrthopedicsstatInfo.addProperty("paralysis", ms[1][2] + "");
@@ -796,10 +796,10 @@ public class SystemController {
 				OrthopedicsstatInfo.addProperty("money", money[1] + "");
 				OrthopedicsstatInfoArray.add(OrthopedicsstatInfo);
 			}
-			else if(matrix[i][2].contains("신경외과"))
+			else if(matrix[i][2].contains("�떊寃쎌쇅怨�"))
 			{ 	
 				neurosurgerystatInfo = new JsonObject();
-				neurosurgerystatInfo.addProperty("location", "신경외과");
+				neurosurgerystatInfo.addProperty("location", "�떊寃쎌쇅怨�");
 				neurosurgerystatInfo.addProperty("Dead", ms[2][0] + "");
 				neurosurgerystatInfo.addProperty("syndrome", ms[2][1] + "");
 				neurosurgerystatInfo.addProperty("paralysis", ms[2][2] + "");
@@ -810,12 +810,12 @@ public class SystemController {
 				neurosurgerystatInfo.addProperty("money", money[2] + "");
 				neurosurgerystatArray.add(neurosurgerystatInfo);
 			}
-			else if(matrix[i][2].contains("내과"))
+			else if(matrix[i][2].contains("�궡怨�"))
 			{ 	
-				if(matrix[i][2].contains("소화기"))
+				if(matrix[i][2].contains("�냼�솕湲�"))
 				{ 	
 					GastroenterologystatInfo = new JsonObject();
-					GastroenterologystatInfo.addProperty("location", "소화기내과");
+					GastroenterologystatInfo.addProperty("location", "�냼�솕湲곕궡怨�");
 					GastroenterologystatInfo.addProperty("Dead", ms[3][0] + "");
 					GastroenterologystatInfo.addProperty("syndrome", ms[3][1] + "");
 					GastroenterologystatInfo.addProperty("paralysis", ms[3][2] + "");
@@ -826,10 +826,10 @@ public class SystemController {
 					GastroenterologystatInfo.addProperty("money", money[3] + "");
 					GastroenterologystatArray.add(GastroenterologystatInfo);
 				}
-				else if(matrix[i][2].contains("호흡기"))
+				else if(matrix[i][2].contains("�샇�씉湲�"))
 				{ 	
 					respiratorystatInfo = new JsonObject();
-					respiratorystatInfo.addProperty("location", "호흡기내과");
+					respiratorystatInfo.addProperty("location", "�샇�씉湲곕궡怨�");
 					respiratorystatInfo.addProperty("Dead", ms[4][0] + "");
 					respiratorystatInfo.addProperty("syndrome", ms[4][1] + "");
 					respiratorystatInfo.addProperty("paralysis", ms[4][2] + "");
@@ -843,7 +843,7 @@ public class SystemController {
 				else
 				{
 					medicinestatInfo = new JsonObject();
-					medicinestatInfo.addProperty("location", "내과");
+					medicinestatInfo.addProperty("location", "�궡怨�");
 					medicinestatInfo.addProperty("Dead", ms[5][0] + "");
 					medicinestatInfo.addProperty("syndrome", ms[5][1] + "");
 					medicinestatInfo.addProperty("paralysis", ms[5][2] + "");
@@ -855,10 +855,10 @@ public class SystemController {
 					medicinestatArray.add(medicinestatInfo);
 				}
 			}
-			else if(matrix[i][2].contains("안과"))
+			else if(matrix[i][2].contains("�븞怨�"))
 			{ 	
 				OphthalmologystatInfo = new JsonObject();
-				OphthalmologystatInfo.addProperty("location", "안과");
+				OphthalmologystatInfo.addProperty("location", "�븞怨�");
 				OphthalmologystatInfo.addProperty("Dead", ms[6][0] + "");
 				OphthalmologystatInfo.addProperty("syndrome", ms[6][1] + "");
 				OphthalmologystatInfo.addProperty("paralysis", ms[6][2] + "");
@@ -869,10 +869,10 @@ public class SystemController {
 				OphthalmologystatInfo.addProperty("money", money[6] + "");
 				OphthalmologystatArray.add(OphthalmologystatInfo);
 			}
-			else if(matrix[i][2].contains("흉부외과"))
+			else if(matrix[i][2].contains("�쓨遺��쇅怨�"))
 			{ 	
 				ThoracicstatInfo = new JsonObject();
-				ThoracicstatInfo.addProperty("location", "흉부외과");
+				ThoracicstatInfo.addProperty("location", "�쓨遺��쇅怨�");
 				ThoracicstatInfo.addProperty("Dead", ms[7][0] + "");
 				ThoracicstatInfo.addProperty("syndrome", ms[7][1] + "");
 				ThoracicstatInfo.addProperty("paralysis", ms[7][2] + "");
@@ -883,10 +883,10 @@ public class SystemController {
 				ThoracicstatInfo.addProperty("money", money[7] + "");	
 				ThoracicstatArray.add(ThoracicstatInfo);
 			}
-			else if(matrix[i][2].contains("이비인후과"))
+			else if(matrix[i][2].contains("�씠鍮꾩씤�썑怨�"))
 			{ 	
 				OtorhinolaryngologystatInfo = new JsonObject();
-				OtorhinolaryngologystatInfo.addProperty("location", "이비인후과");
+				OtorhinolaryngologystatInfo.addProperty("location", "�씠鍮꾩씤�썑怨�");
 				OtorhinolaryngologystatInfo.addProperty("Dead", ms[8][0] + "");
 				OtorhinolaryngologystatInfo.addProperty("syndrome", ms[8][1] + "");
 				OtorhinolaryngologystatInfo.addProperty("paralysis", ms[8][2] + "");
@@ -900,7 +900,7 @@ public class SystemController {
 			else
 			{ 	
 				DentiststatInfo = new JsonObject();
-				DentiststatInfo.addProperty("location", "치과");
+				DentiststatInfo.addProperty("location", "移섍낵");
 				DentiststatInfo.addProperty("Dead", ms[9][0] + "");
 				DentiststatInfo.addProperty("syndrome", ms[9][1] + "");
 				DentiststatInfo.addProperty("paralysis", ms[9][2] + "");
@@ -956,7 +956,7 @@ public class SystemController {
 			mv.setViewName("system/sub_release");
 			BufferedReader br = null;
 			String line;
-			String path = "D:\\컴퓨터공학\\java\\workspace\\mass\\src\\main\\resources\\static\\의료기관평가인증원_환자안전 사고데이터_20181231.csv";
+			String path = "D:\\而댄벂�꽣怨듯븰\\java\\workspace\\mass\\src\\main\\resources\\static\\�쓽猷뚭린愿��룊媛��씤利앹썝_�솚�옄�븞�쟾 �궗怨좊뜲�씠�꽣_20181231.csv";
 			
 			JsonObject jsonObject = new JsonObject();
 			 
@@ -982,7 +982,7 @@ public class SystemController {
 					if ( line.isEmpty() ) {
 				        continue;
 				    }
-					String[] temp = line.split(","); // 탭으로 구분
+					String[] temp = line.split(","); // �꺆�쑝濡� 援щ텇
 					
 				    for(int col= 0; col < cols; col++) {
 				        matrix[row][col]= temp[col];
@@ -1000,39 +1000,39 @@ public class SystemController {
 				}
 				for(int i = 0; i < rows; i++)
 				{
-					if(matrix[i][6].contains("병원"))
-						if(matrix[i][6].contains("상급종합"))
+					if(matrix[i][6].contains("蹂묒썝"))
+						if(matrix[i][6].contains("�긽湲됱쥌�빀"))
 							b++;
-						else if(matrix[i][6].contains("요양"))
+						else if(matrix[i][6].contains("�슂�뼇"))
 							d++;
-						else if(matrix[i][6].contains("종합"))
+						else if(matrix[i][6].contains("醫낇빀"))
 							e++;
 						else
 							a++;
-					else if(matrix[i][6].contains("약국"))
+					else if(matrix[i][6].contains("�빟援�"))
 						h++;
 					else
 						f++;
 						
 				}
 				
-				HInfo.addProperty("location", "병원");
+				HInfo.addProperty("location", "蹂묒썝");
 				HInfo.addProperty("count", a + "");
 				HArray.add(HInfo);
 				HInfo = new JsonObject();
-				HInfo.addProperty("location", "종합병원");
+				HInfo.addProperty("location", "醫낇빀蹂묒썝");
 				HInfo.addProperty("count", e + "");
 				HArray.add(HInfo);
 				HInfo = new JsonObject();
-				HInfo.addProperty("location", "상급종합병원");
+				HInfo.addProperty("location", "�긽湲됱쥌�빀蹂묒썝");
 				HInfo.addProperty("count", b + "");
 				HArray.add(HInfo);
 				HInfo = new JsonObject();
-				HInfo.addProperty("location", "약국");
+				HInfo.addProperty("location", "�빟援�");
 				HInfo.addProperty("count", h + "");
 				HArray.add(HInfo);
 				HInfo = new JsonObject();
-				HInfo.addProperty("location", "불명확");
+				HInfo.addProperty("location", "遺덈챸�솗");
 				HInfo.addProperty("count", (f-1) + "");
 				HArray.add(HInfo);
 				
@@ -1042,15 +1042,15 @@ public class SystemController {
 				JsonArray SArray = new JsonArray();
 				 
 				JsonObject SInfo = new JsonObject();
-		        SInfo.addProperty("range", "500이상");
+		        SInfo.addProperty("range", "500�씠�긽");
 		        SInfo.addProperty("count", mc + "");
 		        SArray.add(SInfo);
 		        SInfo = new JsonObject();
-		        SInfo.addProperty("range", "200이상 500미만");
+		        SInfo.addProperty("range", "200�씠�긽 500誘몃쭔");
 		        SInfo.addProperty("count", c + "");
 		        SArray.add(SInfo);
 		        SInfo = new JsonObject();
-		        SInfo.addProperty("range", "불명확");
+		        SInfo.addProperty("range", "遺덈챸�솗");
 		        SInfo.addProperty("count", (n-1) + "");
 		        SArray.add(SInfo);
 		        
@@ -1061,16 +1061,16 @@ public class SystemController {
 		        
 		        System.out.print(jsonInfo);
 				
-				/*System.out.println("병원" + a);
-				System.out.println("상급종합병원 " + b);
-				System.out.println("종합병원" + e);
-				System.out.println("요양병원" + d);
-				System.out.println("약국" + h);
-				System.out.println("불명확" + (f-1));
+				/*System.out.println("蹂묒썝" + a);
+				System.out.println("�긽湲됱쥌�빀蹂묒썝 " + b);
+				System.out.println("醫낇빀蹂묒썝" + e);
+				System.out.println("�슂�뼇蹂묒썝" + d);
+				System.out.println("�빟援�" + h);
+				System.out.println("遺덈챸�솗" + (f-1));
 				
-				System.out.println("200 ~ 500 병상규모 :" + c);
-				System.out.println("500이상 병상 규모 : " + mc);
-				System.out.println("불명확한 병상 규모 :" + (n-1));*/
+				System.out.println("200 ~ 500 蹂묒긽洹쒕え :" + c);
+				System.out.println("500�씠�긽 蹂묒긽 洹쒕え : " + mc);
+				System.out.println("遺덈챸�솗�븳 蹂묒긽 洹쒕え :" + (n-1));*/
 				/* for(int i = 0; i < rows; i++)
 				 {
 					 for(int j = 0; j < cols; j++)
@@ -1099,16 +1099,16 @@ public class SystemController {
 	public ModelAndView home3() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("system/JSONparse2");
-		//상위 오브젝트 생성
+		//�긽�쐞 �삤釉뚯젥�듃 �깮�꽦
 		JsonObject obj1 = new JsonObject();
-		//data: 뒤에 들어갈 값인 jArray 생성
+		//data: �뮘�뿉 �뱾�뼱媛� 媛믪씤 jArray �깮�꽦
 		JsonArray jArray = new JsonArray();
 		
-		//배열생성, jArray의 0번째 배열에 쭈루룩, 1번째 배열에 쭈루룩~
+		//諛곗뿴�깮�꽦, jArray�쓽 0踰덉㎏ 諛곗뿴�뿉 彛덈（猷�, 1踰덉㎏ 諛곗뿴�뿉 彛덈（猷�~
 		for(int i=0; i<10; i++){
 		
 			JsonObject obj2 = new JsonObject();
-			//obj2는 반드시 for문 안에 놓아야 한다. 그래야 중복이 안생긴다.
+			//obj2�뒗 諛섎뱶�떆 for臾� �븞�뿉 �넃�븘�빞 �븳�떎. 洹몃옒�빞 以묐났�씠 �븞�깮湲대떎.
 			
 			obj2.addProperty("name",i + "name");
 			obj2.addProperty("position",i + "position");
@@ -1121,7 +1121,7 @@ public class SystemController {
 
 		}
 		
-		//마지막으로 최상위의 jsonObject에 data와 jArry를 넣어준다.
+		//留덉�留됱쑝濡� 理쒖긽�쐞�쓽 jsonObject�뿉 data�� jArry瑜� �꽔�뼱以��떎.
 		
 		System.out.println(jArray.toString());
 		mv.addObject("jObject", jArray.toString());
@@ -1136,7 +1136,7 @@ public class SystemController {
 		mv.setViewName("system/JSONparse2");
 		BufferedReader br = null;
 		String line;
-		String path = "D:\\컴퓨터공학\\java\\workspace\\mass\\src\\main\\resources\\static\\의료기관평가인증원_환자안전 사고데이터_20181231.csv";
+		String path = "D:\\而댄벂�꽣怨듯븰\\java\\workspace\\mass\\src\\main\\resources\\static\\�쓽猷뚭린愿��룊媛��씤利앹썝_�솚�옄�븞�쟾 �궗怨좊뜲�씠�꽣_20181231.csv";
 		
 		JsonObject jsonObject = new JsonObject();
 		 
@@ -1162,7 +1162,7 @@ public class SystemController {
 				if ( line.isEmpty() ) {
 			        continue;
 			    }
-				String[] temp = line.split(","); // 탭으로 구분
+				String[] temp = line.split(","); // �꺆�쑝濡� 援щ텇
 				
 			    for(int col= 0; col < cols; col++) {
 			        matrix[row][col]= temp[col];
@@ -1180,43 +1180,43 @@ public class SystemController {
 			}
 			for(int i = 0; i < rows; i++)
 			{
-				if(matrix[i][6].contains("병원"))
-					if(matrix[i][6].contains("상급종합"))
+				if(matrix[i][6].contains("蹂묒썝"))
+					if(matrix[i][6].contains("�긽湲됱쥌�빀"))
 						b++;
-					else if(matrix[i][6].contains("요양"))
+					else if(matrix[i][6].contains("�슂�뼇"))
 						d++;
-					else if(matrix[i][6].contains("종합"))
+					else if(matrix[i][6].contains("醫낇빀"))
 						e++;
 					else
 						a++;
-				else if(matrix[i][6].contains("약국"))
+				else if(matrix[i][6].contains("�빟援�"))
 					h++;
 				else
 					f++;
 					
 			}
 			
-			HInfo.addProperty("location", "병원");
+			HInfo.addProperty("location", "蹂묒썝");
 			HInfo.addProperty("count", a + "");
 			HInfo.addProperty("count", a + "");
 			HArray.add(HInfo);
 			HInfo = new JsonObject();
-			HInfo.addProperty("location", "종합병원");
+			HInfo.addProperty("location", "醫낇빀蹂묒썝");
 			HInfo.addProperty("count", e + "");
 			HInfo.addProperty("count", a + "");
 			HArray.add(HInfo);
 			HInfo = new JsonObject();
-			HInfo.addProperty("location", "상급종합병원");
+			HInfo.addProperty("location", "�긽湲됱쥌�빀蹂묒썝");
 			HInfo.addProperty("count", b + "");
 			HInfo.addProperty("count", a + "");
 			HArray.add(HInfo);
 			HInfo = new JsonObject();
-			HInfo.addProperty("location", "약국");
+			HInfo.addProperty("location", "�빟援�");
 			HInfo.addProperty("count", h + "");
 			HInfo.addProperty("count", a + "");
 			HArray.add(HInfo);
 			HInfo = new JsonObject();
-			HInfo.addProperty("location", "불명확");
+			HInfo.addProperty("location", "遺덈챸�솗");
 			HInfo.addProperty("count", (f-1) + "");
 			HInfo.addProperty("count", a + "");
 			HArray.add(HInfo);
@@ -1227,15 +1227,15 @@ public class SystemController {
 			JsonArray SArray = new JsonArray();
 			 
 			JsonObject SInfo = new JsonObject();
-	        SInfo.addProperty("range", "500이상");
+	        SInfo.addProperty("range", "500�씠�긽");
 	        SInfo.addProperty("count", mc + "");
 	        SArray.add(SInfo);
 	        SInfo = new JsonObject();
-	        SInfo.addProperty("range", "200이상 500미만");
+	        SInfo.addProperty("range", "200�씠�긽 500誘몃쭔");
 	        SInfo.addProperty("count", c + "");
 	        SArray.add(SInfo);
 	        SInfo = new JsonObject();
-	        SInfo.addProperty("range", "불명확");
+	        SInfo.addProperty("range", "遺덈챸�솗");
 	        SInfo.addProperty("count", (n-1) + "");
 	        SArray.add(SInfo);
 	        
@@ -1246,16 +1246,16 @@ public class SystemController {
 	        
 	        System.out.print(jsonInfo);
 			
-			/*System.out.println("병원" + a);
-			System.out.println("상급종합병원 " + b);
-			System.out.println("종합병원" + e);
-			System.out.println("요양병원" + d);
-			System.out.println("약국" + h);
-			System.out.println("불명확" + (f-1));
+			/*System.out.println("蹂묒썝" + a);
+			System.out.println("�긽湲됱쥌�빀蹂묒썝 " + b);
+			System.out.println("醫낇빀蹂묒썝" + e);
+			System.out.println("�슂�뼇蹂묒썝" + d);
+			System.out.println("�빟援�" + h);
+			System.out.println("遺덈챸�솗" + (f-1));
 			
-			System.out.println("200 ~ 500 병상규모 :" + c);
-			System.out.println("500이상 병상 규모 : " + mc);
-			System.out.println("불명확한 병상 규모 :" + (n-1));*/
+			System.out.println("200 ~ 500 蹂묒긽洹쒕え :" + c);
+			System.out.println("500�씠�긽 蹂묒긽 洹쒕え : " + mc);
+			System.out.println("遺덈챸�솗�븳 蹂묒긽 洹쒕え :" + (n-1));*/
 			/* for(int i = 0; i < rows; i++)
 			 {
 				 for(int j = 0; j < cols; j++)
