@@ -7,8 +7,8 @@
 JSONArray HArray = new JSONArray(HArrayString);%>
 	<table class="table table-striped">
 		<tr  class="bg-info">
-		    <th>ìž¥ì†Œ</th>
-		    <th>ê±´ìˆ˜</th>
+		    <th>Àå¼Ò</th>
+		    <th>°Ç¼ö</th>
 		    
 		</tr>
 		<tbody id="HArrayTable">
@@ -29,8 +29,8 @@ JSONArray HArray = new JSONArray(HArrayString);%>
 JSONArray SArray = new JSONArray(SArrayString);%>
 	<table class="table table-striped">
 		<tr  class="bg-info">
-		    <th>ê·œëª¨</th>
-		    <th>ê±´ìˆ˜</th>
+		    <th>±Ô¸ð</th>
+		    <th>°Ç¼ö</th>
 		    
 		</tr>
 		<tbody id="SArrayTable">

@@ -123,9 +123,8 @@
                         JSONArray HArray = new JSONArray(HArrayString);%>
 	<table class="table table-striped">
 		<tr  class="bg-info">
-		    <th>장소</th>
+		    <th>종류</th>
 		    <th>건수</th>
-		    
 		</tr>
 		<tbody id="HArrayTable">
 		
@@ -140,12 +139,11 @@
 		<%}%>
 		</tbody>
 	</table>
-	
-<%String SArrayString = (String)request.getAttribute("SArray");
-JSONArray SArray = new JSONArray(SArrayString);%>
+	<%String SArrayString = (String)request.getAttribute("SArray");
+                        JSONArray SArray = new JSONArray(SArrayString);%>
 	<table class="table table-striped">
 		<tr  class="bg-info">
-		    <th>규모</th>
+		    <th>범위</th>
 		    <th>건수</th>
 		    
 		</tr>
@@ -162,7 +160,585 @@ JSONArray SArray = new JSONArray(SArrayString);%>
 		<%}%>
 		</tbody>
 	</table>
+	<%String OAGArrayString = (String)request.getAttribute("OAGArray");
+                        JSONArray OAGArray = new JSONArray(OAGArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>event</th>
+		    <th>hospital</th>
+		    <th>patient</th>
+		    <th>appraisal</th>
+		    <th>adjustment</th>
+		    
+		</tr>
+		<tbody id="OAGArrayTable">
+		
+		<%for (int i =0; i<OAGArray.length(); i++){
+		JSONObject data = OAGArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("event")%></th>
+		    <th><%=data.getString("hospital")%></th>
+		    <th><%=data.getString("patient")%></th>
+		    <th><%=data.getString("appraisal")%></th>
+		    <th><%=data.getString("adjustment")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
+	<%String OrthopedicsArrayString = (String)request.getAttribute("OrthopedicsArray");
+                        JSONArray OrthopedicsArray = new JSONArray(OrthopedicsArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>event</th>
+		    <th>hospital</th>
+		    <th>patient</th>
+		    <th>appraisal</th>
+		    <th>adjustment</th>
+		    
+		</tr>
+		<tbody id="OrthopedicsArrayTable">
+		
+		<%for (int i =0; i<OrthopedicsArray.length(); i++){
+		JSONObject data = OrthopedicsArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("event")%></th>
+		    <th><%=data.getString("hospital")%></th>
+		    <th><%=data.getString("patient")%></th>
+		    <th><%=data.getString("appraisal")%></th>
+		    <th><%=data.getString("adjustment")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
+	<%String neurosurgeryArrayString = (String)request.getAttribute("neurosurgeryArray");
+                        JSONArray neurosurgeryArray = new JSONArray(neurosurgeryArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>event</th>
+		    <th>hospital</th>
+		    <th>patient</th>
+		    <th>appraisal</th>
+		    <th>adjustment</th>
+		    
+		</tr>
+		<tbody id="neurosurgeryArrayTable">
+		
+		<%for (int i =0; i<neurosurgeryArray.length(); i++){
+		JSONObject data = neurosurgeryArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("event")%></th>
+		    <th><%=data.getString("hospital")%></th>
+		    <th><%=data.getString("patient")%></th>
+		    <th><%=data.getString("appraisal")%></th>
+		    <th><%=data.getString("adjustment")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
+	<%String GastroenterologyArrayString = (String)request.getAttribute("GastroenterologyArray");
+                        JSONArray GastroenterologyArray = new JSONArray(GastroenterologyArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>event</th>
+		    <th>hospital</th>
+		    <th>patient</th>
+		    <th>appraisal</th>
+		    <th>adjustment</th>
+		    
+		</tr>
+		<tbody id="GastroenterologyArrayTable">
+		
+		<%for (int i =0; i<GastroenterologyArray.length(); i++){
+		JSONObject data = GastroenterologyArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("event")%></th>
+		    <th><%=data.getString("hospital")%></th>
+		    <th><%=data.getString("patient")%></th>
+		    <th><%=data.getString("appraisal")%></th>
+		    <th><%=data.getString("adjustment")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
+	<%String respiratoryArrayString = (String)request.getAttribute("respiratoryArray");
+                        JSONArray respiratoryArray = new JSONArray(respiratoryArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>event</th>
+		    <th>hospital</th>
+		    <th>patient</th>
+		    <th>appraisal</th>
+		    <th>adjustment</th>
+		    
+		</tr>
+		<tbody id="respiratoryArrayTable">
+		
+		<%for (int i =0; i<respiratoryArray.length(); i++){
+		JSONObject data = respiratoryArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("event")%></th>
+		    <th><%=data.getString("hospital")%></th>
+		    <th><%=data.getString("patient")%></th>
+		    <th><%=data.getString("appraisal")%></th>
+		    <th><%=data.getString("adjustment")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
+	<%String medicineArrayString = (String)request.getAttribute("medicineArray");
+                        JSONArray medicineArray = new JSONArray(medicineArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>event</th>
+		    <th>hospital</th>
+		    <th>patient</th>
+		    <th>appraisal</th>
+		    <th>adjustment</th>
+		    
+		</tr>
+		<tbody id="medicineArrayTable">
+		
+		<%for (int i =0; i<medicineArray.length(); i++){
+		JSONObject data = medicineArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("event")%></th>
+		    <th><%=data.getString("hospital")%></th>
+		    <th><%=data.getString("patient")%></th>
+		    <th><%=data.getString("appraisal")%></th>
+		    <th><%=data.getString("adjustment")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
+	<%String OphthalmologyArrayString = (String)request.getAttribute("OphthalmologyArray");
+                        JSONArray OphthalmologyArray = new JSONArray(OphthalmologyArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>event</th>
+		    <th>hospital</th>
+		    <th>patient</th>
+		    <th>appraisal</th>
+		    <th>adjustment</th>
+		    
+		</tr>
+		<tbody id="OphthalmologyArrayTable">
+		
+		<%for (int i =0; i<OphthalmologyArray.length(); i++){
+		JSONObject data = OphthalmologyArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("event")%></th>
+		    <th><%=data.getString("hospital")%></th>
+		    <th><%=data.getString("patient")%></th>
+		    <th><%=data.getString("appraisal")%></th>
+		    <th><%=data.getString("adjustment")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
+	<%String ThoracicArrayString = (String)request.getAttribute("ThoracicArray");
+                        JSONArray ThoracicArray = new JSONArray(ThoracicArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>event</th>
+		    <th>hospital</th>
+		    <th>patient</th>
+		    <th>appraisal</th>
+		    <th>adjustment</th>
+		    
+		</tr>
+		<tbody id="ThoracicArrayTable">
+		
+		<%for (int i =0; i<ThoracicArray.length(); i++){
+		JSONObject data = ThoracicArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("event")%></th>
+		    <th><%=data.getString("hospital")%></th>
+		    <th><%=data.getString("patient")%></th>
+		    <th><%=data.getString("appraisal")%></th>
+		    <th><%=data.getString("adjustment")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
+	<%String OtorhinolaryngologyArrayString = (String)request.getAttribute("OtorhinolaryngologyArray");
+                        JSONArray OtorhinolaryngologyArray = new JSONArray(OtorhinolaryngologyArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>event</th>
+		    <th>hospital</th>
+		    <th>patient</th>
+		    <th>appraisal</th>
+		    <th>adjustment</th>
+		    
+		</tr>
+		<tbody id="OtorhinolaryngologyArrayTable">
+		
+		<%for (int i =0; i<OtorhinolaryngologyArray.length(); i++){
+		JSONObject data = OtorhinolaryngologyArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("event")%></th>
+		    <th><%=data.getString("hospital")%></th>
+		    <th><%=data.getString("patient")%></th>
+		    <th><%=data.getString("appraisal")%></th>
+		    <th><%=data.getString("adjustment")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
+	<%String OAGstatArrayString = (String)request.getAttribute("OAGstatArray");
+                        JSONArray OAGstatArray = new JSONArray(OAGstatArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>Dead</th>
+		    <th>syndrome</th>
+		    <th>paralysis</th>
+		    <th>obstacle</th>
+		    <th>delay</th>
+		    <th>revision</th>
+		    <th>etc</th>
+		    <th>money</th>
+		    
+		</tr>
+		<tbody id="OAGstatArrayTable">
+		
+		<%for (int i =0; i<OAGstatArray.length(); i++){
+		JSONObject data = OAGstatArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("Dead")%></th>
+		    <th><%=data.getString("syndrome")%></th>
+		    <th><%=data.getString("paralysis")%></th>
+		    <th><%=data.getString("obstacle")%></th>
+		    <th><%=data.getString("delay")%></th>
+		    <th><%=data.getString("revision")%></th>
+		    <th><%=data.getString("etc")%></th>
+		    <th><%=data.getString("money")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
+	<%String OrthopedicsstatInfoArrayString = (String)request.getAttribute("OrthopedicsstatInfoArray");
+                        JSONArray OrthopedicsstatInfoArray = new JSONArray(OrthopedicsstatInfoArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>Dead</th>
+		    <th>syndrome</th>
+		    <th>paralysis</th>
+		    <th>obstacle</th>
+		    <th>delay</th>
+		    <th>revision</th>
+		    <th>etc</th>
+		    <th>money</th>
+		    
+		</tr>
+		<tbody id="OrthopedicsstatInfoArrayTable">
+		
+		<%for (int i =0; i<OrthopedicsstatInfoArray.length(); i++){
+		JSONObject data = OrthopedicsstatInfoArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("Dead")%></th>
+		    <th><%=data.getString("syndrome")%></th>
+		    <th><%=data.getString("paralysis")%></th>
+		    <th><%=data.getString("obstacle")%></th>
+		    <th><%=data.getString("delay")%></th>
+		    <th><%=data.getString("revision")%></th>
+		    <th><%=data.getString("etc")%></th>
+		    <th><%=data.getString("money")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
+	<%String GastroenterologystatArrayString = (String)request.getAttribute("GastroenterologystatArray");
+                        JSONArray GastroenterologystatArray = new JSONArray(GastroenterologystatArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>Dead</th>
+		    <th>syndrome</th>
+		    <th>paralysis</th>
+		    <th>obstacle</th>
+		    <th>delay</th>
+		    <th>revision</th>
+		    <th>etc</th>
+		    <th>money</th>
+		    
+		</tr>
+		<tbody id="GastroenterologystatArrayTable">
+		
+		<%for (int i =0; i<GastroenterologystatArray.length(); i++){
+		JSONObject data = GastroenterologystatArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("Dead")%></th>
+		    <th><%=data.getString("syndrome")%></th>
+		    <th><%=data.getString("paralysis")%></th>
+		    <th><%=data.getString("obstacle")%></th>
+		    <th><%=data.getString("delay")%></th>
+		    <th><%=data.getString("revision")%></th>
+		    <th><%=data.getString("etc")%></th>
+		    <th><%=data.getString("money")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
+	<%String respiratorystatArrayString = (String)request.getAttribute("respiratorystatArray");
+                        JSONArray respiratorystatArray = new JSONArray(respiratorystatArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>Dead</th>
+		    <th>syndrome</th>
+		    <th>paralysis</th>
+		    <th>obstacle</th>
+		    <th>delay</th>
+		    <th>revision</th>
+		    <th>etc</th>
+		    <th>money</th>
+		    
+		</tr>
+		<tbody id="respiratorystatArrayTable">
+		
+		<%for (int i =0; i<respiratorystatArray.length(); i++){
+		JSONObject data = respiratorystatArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("Dead")%></th>
+		    <th><%=data.getString("syndrome")%></th>
+		    <th><%=data.getString("paralysis")%></th>
+		    <th><%=data.getString("obstacle")%></th>
+		    <th><%=data.getString("delay")%></th>
+		    <th><%=data.getString("revision")%></th>
+		    <th><%=data.getString("etc")%></th>
+		    <th><%=data.getString("money")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
+	<%String medicinestatArrayString = (String)request.getAttribute("medicinestatArray");
+                        JSONArray medicinestatArray = new JSONArray(medicinestatArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>Dead</th>
+		    <th>syndrome</th>
+		    <th>paralysis</th>
+		    <th>obstacle</th>
+		    <th>delay</th>
+		    <th>revision</th>
+		    <th>etc</th>
+		    <th>money</th>
+		    
+		</tr>
+		<tbody id="medicinestatArrayTable">
+		
+		<%for (int i =0; i<medicinestatArray.length(); i++){
+		JSONObject data = medicinestatArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("Dead")%></th>
+		    <th><%=data.getString("syndrome")%></th>
+		    <th><%=data.getString("paralysis")%></th>
+		    <th><%=data.getString("obstacle")%></th>
+		    <th><%=data.getString("delay")%></th>
+		    <th><%=data.getString("revision")%></th>
+		    <th><%=data.getString("etc")%></th>
+		    <th><%=data.getString("money")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
+	<%String OphthalmologystatArrayString = (String)request.getAttribute("OphthalmologystatArray");
+                        JSONArray OphthalmologystatArray = new JSONArray(OphthalmologystatArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>Dead</th>
+		    <th>syndrome</th>
+		    <th>paralysis</th>
+		    <th>obstacle</th>
+		    <th>delay</th>
+		    <th>revision</th>
+		    <th>etc</th>
+		    <th>money</th>
+		    
+		</tr>
+		<tbody id="OphthalmologystatArrayTable">
+		
+		<%for (int i =0; i<OphthalmologystatArray.length(); i++){
+		JSONObject data = OphthalmologystatArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("Dead")%></th>
+		    <th><%=data.getString("syndrome")%></th>
+		    <th><%=data.getString("paralysis")%></th>
+		    <th><%=data.getString("obstacle")%></th>
+		    <th><%=data.getString("delay")%></th>
+		    <th><%=data.getString("revision")%></th>
+		    <th><%=data.getString("etc")%></th>
+		    <th><%=data.getString("money")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
+	<%String ThoracicstatArrayString = (String)request.getAttribute("ThoracicstatArray");
+                        JSONArray ThoracicstatArray = new JSONArray(ThoracicstatArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>Dead</th>
+		    <th>syndrome</th>
+		    <th>paralysis</th>
+		    <th>obstacle</th>
+		    <th>delay</th>
+		    <th>revision</th>
+		    <th>etc</th>
+		    <th>money</th>
+		    
+		</tr>
+		<tbody id="ThoracicstatArrayTable">
+		
+		<%for (int i =0; i<ThoracicstatArray.length(); i++){
+		JSONObject data = ThoracicstatArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("Dead")%></th>
+		    <th><%=data.getString("syndrome")%></th>
+		    <th><%=data.getString("paralysis")%></th>
+		    <th><%=data.getString("obstacle")%></th>
+		    <th><%=data.getString("delay")%></th>
+		    <th><%=data.getString("revision")%></th>
+		    <th><%=data.getString("etc")%></th>
+		    <th><%=data.getString("money")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
+	<%String OtorhinolaryngologystatArrayString = (String)request.getAttribute("OtorhinolaryngologystatArray");
+                        JSONArray OtorhinolaryngologystatArray = new JSONArray(OtorhinolaryngologystatArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>Dead</th>
+		    <th>syndrome</th>
+		    <th>paralysis</th>
+		    <th>obstacle</th>
+		    <th>delay</th>
+		    <th>revision</th>
+		    <th>etc</th>
+		    <th>money</th>
+		    
+		</tr>
+		<tbody id="OtorhinolaryngologystatArrayTable">
+		
+		<%for (int i =0; i<OtorhinolaryngologystatArray.length(); i++){
+		JSONObject data = OtorhinolaryngologystatArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("Dead")%></th>
+		    <th><%=data.getString("syndrome")%></th>
+		    <th><%=data.getString("paralysis")%></th>
+		    <th><%=data.getString("obstacle")%></th>
+		    <th><%=data.getString("delay")%></th>
+		    <th><%=data.getString("revision")%></th>
+		    <th><%=data.getString("etc")%></th>
+		    <th><%=data.getString("money")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
+	<%String DentiststatArrayString = (String)request.getAttribute("DentiststatArray");
+                        JSONArray DentiststatArray = new JSONArray(DentiststatArrayString);%>
+	<table class="table table-striped">
+		<tr  class="bg-info">
+		    <th>location</th>
+		    <th>Dead</th>
+		    <th>syndrome</th>
+		    <th>paralysis</th>
+		    <th>obstacle</th>
+		    <th>delay</th>
+		    <th>revision</th>
+		    <th>etc</th>
+		    <th>money</th>
+		    
+		</tr>
+		<tbody id="DentiststatArrayTable">
+		
+		<%for (int i =0; i<DentiststatArray.length(); i++){
+		JSONObject data = DentiststatArray.getJSONObject(i);
+		   { %>
+			<tr>
+		    <th><%=data.getString("location")%></th>
+		    <th><%=data.getString("Dead")%></th>
+		    <th><%=data.getString("syndrome")%></th>
+		    <th><%=data.getString("paralysis")%></th>
+		    <th><%=data.getString("obstacle")%></th>
+		    <th><%=data.getString("delay")%></th>
+		    <th><%=data.getString("revision")%></th>
+		    <th><%=data.getString("etc")%></th>
+		    <th><%=data.getString("money")%></th>
+			</tr>   
+		<% }%>
+		<%}%>
+		</tbody>
+	</table>
 	
+	
+
                     </details>
                 </div>
             </div>

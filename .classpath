@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="MASS/.mvn/wrapper/|MASS/src/main/java/" kind="src" path="JAVA"/>
+	<classpathentry kind="src" path="JAVA/MASS/.mvn/wrapper"/>
+	<classpathentry kind="src" path="JAVA/MASS/src/main/java"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
