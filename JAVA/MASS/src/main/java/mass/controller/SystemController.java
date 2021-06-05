@@ -42,7 +42,7 @@ public class SystemController {
 		
 		JsonObject jsonObject = new JsonObject();
 		 
-    
+		//파일 리딩 및 파싱을 위한 알고리즘 JSP로 전송
 		try {
 			br = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF-8"));
 			pr = new BufferedReader(new InputStreamReader(new FileInputStream(path2), "UTF-8"));
@@ -1129,6 +1129,7 @@ public class SystemController {
 		return mv;
 	}
 	
+	//JSON 파싱 알고리즘
 	@RequestMapping(value = "/json", method = RequestMethod.GET)
 	@ResponseBody
 	public ModelAndView json() {
@@ -1221,7 +1222,7 @@ public class SystemController {
 			HInfo.addProperty("count", a + "");
 			HArray.add(HInfo);
 			
-			/* jsonObject.addProperty("Hospital", HArray); */
+	
 			mv.addObject("HArray", HArray.toString());
 			
 			JsonArray SArray = new JsonArray();
@@ -1239,29 +1240,13 @@ public class SystemController {
 	        SInfo.addProperty("count", (n-1) + "");
 	        SArray.add(SInfo);
 	        
-			/* jsonObject.addProperty("Scale", SArray); */
+		
 	        mv.addObject("SArray", SArray.toString());
 	        
 	        String jsonInfo = jsonObject.toString();
 	        
 	        System.out.print(jsonInfo);
 			
-			/*System.out.println("蹂묒썝" + a);
-			System.out.println("�긽湲됱쥌�빀蹂묒썝 " + b);
-			System.out.println("醫낇빀蹂묒썝" + e);
-			System.out.println("�슂�뼇蹂묒썝" + d);
-			System.out.println("�빟援�" + h);
-			System.out.println("遺덈챸�솗" + (f-1));
-			
-			System.out.println("200 ~ 500 蹂묒긽洹쒕え :" + c);
-			System.out.println("500�씠�긽 蹂묒긽 洹쒕え : " + mc);
-			System.out.println("遺덈챸�솗�븳 蹂묒긽 洹쒕え :" + (n-1));*/
-			/* for(int i = 0; i < rows; i++)
-			 {
-				 for(int j = 0; j < cols; j++)
-					 System.out.print(matrix[i][j]);
-				 System.out.println();
-			 }*/
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

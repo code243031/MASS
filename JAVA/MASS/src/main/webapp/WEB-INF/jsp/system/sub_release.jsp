@@ -62,9 +62,9 @@
                         JSONArray HArray = new JSONArray(HArrayString);%>
 	<table class="table table-striped">
 		<tr  class="bg-info">
-		    <th>장소</th>
-		    <th>건수</th>
-		    <th>건수</th>
+		    <th>장 소</th>
+		    <th>건 수</th>
+		    <th>건 수</th>
 		    
 		</tr>
 		<tbody id="HArrayTable">
@@ -86,8 +86,8 @@
 JSONArray SArray = new JSONArray(SArrayString);%>
 	<table class="table table-striped">
 		<tr  class="bg-info">
-		    <th>규모</th>
-		    <th>건수</th>
+		    <th>규 모</th>
+		    <th>건 수</th>
 		    
 		</tr>
 		<tbody id="SArrayTable">
