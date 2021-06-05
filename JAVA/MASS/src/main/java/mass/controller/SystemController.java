@@ -35,7 +35,7 @@ public class SystemController {
 		BufferedReader br = null;
 		BufferedReader pr = null;
 		String line, line2;
-		
+		//각자 자신의 폴더구조에 맞게 변경
 		String path = "C:\\Users\\USER\\Documents\\mass3\\JAVA\\MASS\\src\\main\\resources\\static\\2.csv";
 		String path2 = "C:\\Users\\USER\\Documents\\mass3\\JAVA\\MASS\\src\\main\\resources\\static\\의료기관평가인증원_환자안전 사고데이터_20181231.csv";
 		
